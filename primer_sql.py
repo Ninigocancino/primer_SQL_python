@@ -12,7 +12,9 @@ CREATE TABLE IF NOT EXISTS usuarios (
 )
 ''')
 
-cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Juan',23)")
+cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Juan', 23)")
+cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Matias', 22)")
+cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Laura', 25)")
 
 conn.commit()
 
