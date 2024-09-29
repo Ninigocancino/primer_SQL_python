@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
 #cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Juan', 23)")
 #cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Matias', 22)")
 #cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Laura', 25)")
-cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Sara', 32)")
+#cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Sara', 32)")
 #conn.commit()
 
 #CONSULTA 02: USUARIOS CON EDAD IGUAL 30 AÑOS
@@ -37,6 +37,20 @@ usuarios = cursor.fetchall()
 
 for usuario in usuarios:
     print(usuario)
+
+#CONSULTA 03: Encontrar registros duplicados con el mismo nombre y edad
+cursor.execute('''
+SELECT id, nombre, edad, COUNT(*)
+FROM usuarios
+GROUP BY nombre, edad
+HAVING COUNT(*) > 1
+''')
+
+# Mostrar los registros duplicados
+duplicados = cursor.fetchall()
+print("Registros duplicados:")
+for duplicado in duplicados:
+    print(duplicado)
 
 cursor.close()
 conn.close()
