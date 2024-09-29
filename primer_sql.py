@@ -52,5 +52,24 @@ print("Registros duplicados:")
 for duplicado in duplicados:
     print(duplicado)
 
+print("")
+#CONSULTA 04: Eliminar uno de los valores duplicados
+
+# Vamos a eliminar el valor con el id 2
+
+cursor.execute("DELETE FROM usuarios WHERE id = 2")
+
+# Confirmar cambios en la base de datos
+conn.commit()
+
+# Verificar los registros después de la eliminación
+cursor.execute("SELECT * FROM usuarios")
+usuarios = cursor.fetchall()
+
+# Mostrar todos los registros restantes
+print("\nRegistros después de eliminar el duplicado:")
+for usuario in usuarios:
+    print(usuario)
+
 cursor.close()
 conn.close()
