@@ -17,6 +17,7 @@ CREATE TABLE IF NOT EXISTS usuarios (
 #cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Juan', 23)")
 #cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Matias', 22)")
 #cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Laura', 25)")
+cursor.execute("INSERT INTO usuarios (nombre,edad) VALUES ('Sara', 32)")
 #conn.commit()
 
 #CONSULTA 02: USUARIOS CON EDAD IGUAL 30 AÑOS
